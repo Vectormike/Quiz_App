@@ -5,18 +5,23 @@ import './App.css';
 
 class App extends Component {
     constructor() {
-        super()
+        super();
 
         this.state = {
-            question: {}
+            questions: {}
         }
     }
 
     componentDidMount() {
         fetch('https://opentdb.com/api.php?amount=10&type=boolean')
         .then(response => response.json())
-        .then(results => {
-            console.log(JSON.stringify(results));
+        .then(result => {
+            console.log(JSON.stringify(result));
+            let questions =result.map((quest) => {
+                return quest.result.question
+            })
+        this.setState({questions: questions})
+        console.log('State', this.state.questions)
         });
     }
 
