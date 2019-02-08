@@ -8,20 +8,17 @@ class App extends Component {
         super();
 
         this.state = {
-            questions: {}
+            results: {}
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         fetch('https://opentdb.com/api.php?amount=10&type=boolean')
         .then(response => response.json())
         .then(result => {
             console.log(JSON.stringify(result));
-            let questions =result.map((quest) => {
-                return quest.result.question
-            })
-        this.setState({questions: questions})
-        console.log('State', this.state.questions)
+            this.setState({results: result})
+            console.log(this.state.results)
         });
     }
 
