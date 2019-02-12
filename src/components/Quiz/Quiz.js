@@ -9,17 +9,21 @@ class Quiz extends Component {
         }
     }
 
-    componentWillMount() {
-        fetch('https://opentdb.com/api.php?amount=10&type=boolean')
-        .then(response => response.json())
-        .then(result => {
+    async componentDidMount() {
+        try {
+            const response = await fetch('https://opentdb.com/api.php?amount=10&type=boolean')
+            const result = await response.json()
             this.setState({
                 data: {
                     response: result.results
                 }
             })
-        });
-    }
+        } 
+        catch(err) {
+            console.log(`Oops`, err)
+        }
+    }    
+    
 
     //The #Previous button event clicking
     onPrevClick = (event) => {
@@ -31,11 +35,11 @@ class Quiz extends Component {
         console.log(event.target.value)
     }
 
-
     //The #Startover button event clicking
     onStartClick = (event) => {
         console.log(event.target.value)
     }
+
     render() {
 
 
