@@ -18,29 +18,39 @@ class Quiz extends Component {
                     response: result.results
                 }
             })
-            console.log(this.state.data)
         });
     }
 
+    //The #Previous button event clicking
+    onPrevClick = (event) => {
+        console.log(event.target.value)
+    }
 
+    //The #Next button event clicking
+    onNextClick = (event) => {
+        console.log(event.target.value)
+    }
+
+
+    //The #Startover button event clicking
+    onStartClick = (event) => {
+        console.log(event.target.value)
+    }
     render() {
 
-        const category = this.state.data.res.map((res) => {
-            return res.category
-        })
 
         return (
             
             <div id='container'>
                 <div id='title'>
-                    <header>{category}</header>
+                    <header></header>
                 </div>
                 <hr/>
                 <hr/>
                 <div id='quiz'>{}</div>
-                <button className='button' id='next'>Next</button>
-                <button className='button' id='prev'>Prev</button>
-                <button className='button' id='start'>Start Over</button>
+                <button className='button' id='prev' onClick={this.onPrevClick}>Prev</button>
+                <button className='button' id='next' onClick={this.onNextClick}>Next</button>
+                <button className='button' id='start' onClick={this.onStartClick}>Start Over</button>
             </div>
             
         )
