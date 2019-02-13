@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Quest from '../Quiz/Quest'
 
 class Quiz extends Component {
     constructor() {
@@ -19,7 +20,6 @@ class Quiz extends Component {
                 data: {
                     response: all.results
                 }})
-            console.log(this.state.data.response[0])
         } 
         catch(err) {
             console.log(`Oops!`, err)
@@ -45,25 +45,13 @@ class Quiz extends Component {
     render() {
         
         const questions = this.state.data.response.map(item => {
-            return [item.question]
+            return item.question
         })
         console.log(questions)
 
         return (
-            
-            <div id='container'>
-                <div id='title'>
-                    <header></header>
-                </div>
-                <hr/>
-                <hr/>
-                <div id='quiz'>{}</div>
-                <button className='button' id='prev' onClick={this.onPrevClick}>Prev</button>
-                <button className='button' id='next' onClick={this.onNextClick}>Next</button>
-                <button className='button' id='start' onClick={this.onStartClick}>Start Over</button>
-            </div>
-            
-        )
+          <Quest onPrevClick={this.onPrevClick} onStartClick={this.onStartClick} onNextClick={this.onNextClick} />  
+        );
     }
 }
 
