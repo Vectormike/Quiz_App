@@ -5,22 +5,24 @@ class Quiz extends Component {
         super();
 
         this.state = {
-            data: []
+            data: {
+                response: []
+            }
         }
     }
 
     async componentDidMount() {
         try {
             const response = await fetch('https://opentdb.com/api.php?amount=10&type=boolean')
-            const result = await response.json()
+            const all = await response.json()
             this.setState({
                 data: {
-                    response: result.results
-                }
-            })
+                    response: all.results
+                }})
+            console.log(this.state.data.response[0])
         } 
         catch(err) {
-            console.log(`Oops`, err)
+            console.log(`Oops!`, err)
         }
     }    
     
@@ -41,7 +43,11 @@ class Quiz extends Component {
     }
 
     render() {
-
+        
+        const questions = this.state.data.response.map(item => {
+            return [item.question]
+        })
+        console.log(questions)
 
         return (
             
