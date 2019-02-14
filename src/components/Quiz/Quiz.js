@@ -50,7 +50,7 @@ class Quiz extends Component {
         console.log(questions)
 
         return (
-          <Quest onPrevClick={this.onPrevClick} onStartClick={this.onStartClick} onNextClick={this.onNextClick} />  
+          <Quest questions={this.questions} onPrevClick={this.onPrevClick} onStartClick={this.onStartClick} onNextClick={this.onNextClick} />  
         );
     }
 }
