@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
+
 import Navbar from './components/Navbar/Navbar';
-import Quiz from './components/Quiz/Quiz'
 import Footer from './components/Footer/Footer';
 import './App.css';
 
@@ -9,9 +10,17 @@ class App extends Component {
   render() {
     return (
       <div className="tc">
-        <Navbar/>
-        <Quiz/>
-        <Footer/>
+        <Route path="/" render={() => {
+          return (
+            <div>
+              <Navbar/>
+      
+              <Footer/>
+            </div>
+          );
+        }}>
+        </Route>
+        
       </div>
     );
   }
