@@ -3,8 +3,8 @@ import React from 'react';
 const Navbar = () => {
     return (
         <div>
-            <nav className={'navbar navbar-dark bg-dark'}>
-                <div className='navbar-hader'>
+            <nav className={'navbar navbar-inverse bg-inverse'}>
+                <div className='navbar-header'>
                     <a className={'navbar-brand'} href={'#id'}>
                     Quiz App <i className="fas fa-question"></i>
                     </a>
