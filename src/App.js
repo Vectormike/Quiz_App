@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-
+import Home from './components/Home/Home';
 class App extends Component {
 	constructor(){
 		super()
@@ -26,21 +25,16 @@ getData = async () => {
 
 //    const questions = this.state.data.response.map(item => {return item.question	})
 
-  render() {
-	 return (
-		<div className="tc">
-		  <Route path="/" render={() => {
-			 return (
-				<div>
-				  <Navbar/>
-				</div>
-			 );
-		  }}>
-		  </Route>
-		  
+render() {
+	return (
+		<div className="App">
+			<Route path="/" exact component={Home}/>
 		</div>
-	 );
-  }
+	);
+}
+
+
+
 }
 
 export default App;
