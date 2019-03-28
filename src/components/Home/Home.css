@@ -1,0 +1,8 @@
+html {
+    background-image: url(https://images.unsplash.com/photo-1551300444-2a7ea9b69f2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=876&q=80) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+}
