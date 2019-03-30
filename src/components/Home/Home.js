@@ -9,7 +9,7 @@ const Home = () => {
             <Navbar/>
             <div className="center">
                 <p>Lorem ipsum color</p>
-                <button className="btn btn-dark btn-lg"><Link to="#"><span className="btn-label"><i className="glyphicon glyphicon-ok"></i></span> Play Quiz</Link></button>
+                <Link to="/quiz"><button className="btn btn-primary btn-round btn-lg"><span className="btn-label"><i class="fas fa-play"></i></span> Play Quiz</button></Link>
             </div>
         </div>
     )
