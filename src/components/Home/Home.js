@@ -8,8 +8,8 @@ const Home = () => {
         <div className="main">
             <Navbar/>
             <div className="center">
-                <p>Lorem ipsum color</p>
-                <Link to="/quiz"><button className="btn btn-primary btn-round btn-lg"><span className="btn-label"><i class="fas fa-play"></i></span> Play Quiz</button></Link>
+                <p className="br--top bg-white">Lorem ipsum color</p>
+                <Link to="/quiz"><button className=" grow btn btn-primary btn-round btn-lg"><span className="btn-label"><i class="fas fa-play"></i></span> Play Quiz</button></Link>
             </div>
         </div>
     )
