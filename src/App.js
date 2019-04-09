@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
-import Quiz from './components/Questions/Quiz';
 import Trivia from './components/Questions/Trivia';
 class App extends Component {
 	constructor(){
@@ -40,15 +39,13 @@ onNextClick = () => {
 
 render() {
 	return (
-		
 		<div className="App">
 				<Route path="/" exact component={Home}/>
-				<Route path="/quiz" render={() => {
+				<Route path="/quiz" render={() => (
 					<Trivia
-						res={this.state.results} 
 						nextButton={this.onNextClick}
 					/>
-				}}
+				)}
 				/>
 		</div>
 	);
