@@ -11,7 +11,7 @@ const Home = () => {
 				<p className="br--top washed-blue">Lorem ipsum color</p>
 				<Link to="/quiz">
 					<button className=" grow btn btn-primary btn-round btn-lg">
-						<span className="btn-label"><i class="fas fa-play"></i></span> Play Quiz  
+						<span className="btn-label"><i className="fas fa-play"></i></span> Play Quiz  
 					</button>
 				</Link>
 			</div>
