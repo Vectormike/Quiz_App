@@ -1,9 +1,12 @@
 import React from 'react'
 
 
-const Trivia = () => {
+const Trivia = ({nextButton, resp}) => {
     return (
-        <div></div>
+        <div>
+            <p>{resp}</p>
+            <p><button onClick={nextButton}>Next</button></p>
+        </div>
     )
 }
 
