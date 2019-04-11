@@ -9,7 +9,7 @@ class App extends Component {
 		super()
 
 		this.state = {
-			results: {}
+			results: []
 		}
 	}
 
@@ -18,7 +18,7 @@ getData = async () => {
 	try {
 		const response = await fetch('https://opentdb.com/api.php?amount=10&type=boolean')
 		const data = await response.json()
-		this.setState({results: data})
+		this.setState({results: data.results})
 		console.log(this.state.results)
 	}
 	catch(err) {
@@ -35,14 +35,18 @@ onNextClick = () => {
 }
 
 render() {
+	
+	const quiz = this.state.results.map(ques => {
+		 return ques.question
+	})
+
+	console.log(quiz)
 	return (
 		<div className="App">
-				<Quiz resp={this.state.results}/>
 				<Route path="/" exact component={Home}/>
 				<Route path="/quiz" render={() => (
 					<Trivia
-					
-				resp={this.state.results}
+				resp={quiz}
 						nextButton={this.onNextClick}
 					/>
 				)}
