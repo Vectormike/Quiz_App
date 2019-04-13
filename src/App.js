@@ -36,7 +36,9 @@ onNextClick = () => {
 
 render() {
 	
-	const quiz = this.state.results.filter(data => data.question > 6 && data.correct_answer < 5).map(data => data.question && data.correct_answer)	
+	const questions = this.state.results.map(data => data.question)
+	
+	const answers = this.state.results.map(data => data.correct_answer)	
 	
 
 	return (
@@ -44,7 +46,8 @@ render() {
 				<Route path="/" exact component={Home}/>
 				<Route path="/quiz" render={() => (
 					<Trivia
-				resp={quiz}
+						questions={questions}
+						answers={answers}
 						nextButton={this.onNextClick}
 					/>
 				)}
