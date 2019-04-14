@@ -1,11 +1,10 @@
 import React from 'react'
 
 
-const Trivia = ({nextButton, resp}) => {
+const Trivia = ({nextButton, questions, answers}) => {
     return (
-        <div>
-            {JSON.stringify({resp})}
-            <p><button onClick={nextButton}>Next</button></p>
+        <div className="">
+            
         </div>
     )
 }

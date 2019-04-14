@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
-import Quiz from './components/Questions/Quiz'
 import Trivia from './components/Questions/Trivia';
 class App extends Component {
 	constructor(){
@@ -37,9 +36,9 @@ onNextClick = () => {
 render() {
 	
 	const questions = this.state.results.map(data => data.question)
-	
+	console.log(questions);
 	const answers = this.state.results.map(data => data.correct_answer)	
-	
+	console.log(answers);
 
 	return (
 		<div className="App">
