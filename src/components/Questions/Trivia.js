@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Trivia.css';
 
 
 const Trivia = ({nextButton, questions, answers}) => {
 	return (
-		<div className="container bg-info">
+		<div className="section container bg-info">
 		   <div className="modal-dialog">
 			<div className="modal-content">
 				<div className="modal-header">
