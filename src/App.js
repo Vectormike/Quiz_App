@@ -29,9 +29,6 @@ componentDidMount() {
 	this.getData();
 }
 
-onNextClick = () => {
-	this.getData()
-}
 
 render() {
 	
@@ -47,7 +44,6 @@ render() {
 					<Trivia
 						questions={questions}
 						answers={answers}
-						nextButton={this.onNextClick}
 					/>
 				)}
 				/>

@@ -3,6 +3,11 @@ import './Trivia.css';
 
 
 const Trivia = ({nextButton, questions, answers}) => {
+
+	if(questions) {
+		
+	}
+
 	return (
 		<div className="section container bg-info">
 		   <div className="modal-dialog">
@@ -12,9 +17,10 @@ const Trivia = ({nextButton, questions, answers}) => {
 				</div>
 				<div className="modal-body">
 					<div className="quiz" data-toggle="buttons">
-						<label className=""><span><i class="fas fa-angle-right"></i></span><input type="radio"/></label>
+						<label className=""><span><i class="fas fa-angle-right"></i></span><input type="radio"/>Answer</label>
 					</div>
 				</div>
+				<button>Next</button>
 			</div>
 		   </div>
 		</div>
